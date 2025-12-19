@@ -1,0 +1,5 @@
+artifacts
+mlruns
+service/models
+random_forest_model.pkl
+.env

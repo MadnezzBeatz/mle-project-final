@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+LABEL author=${AUTHOR}
+COPY . ./app
+WORKDIR app 
+RUN pip3 install -r requirements.txt
+EXPOSE ${MAIN_APP_PORT}
+VOLUME /models
+CMD uvicorn app.main:app --reload --port ${MAIN_APP_PORT} --host 0.0.0.0
